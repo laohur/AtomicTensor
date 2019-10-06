@@ -6,7 +6,7 @@ A atomic, multi-backend, easy deeplearning framework
 
 算子 张量 分离
 第一期使用 numpy numba  
-第二期添加 cuda xtensor
+第二期添加 cuda xtensor mars
 
 Tensor
 Opetator

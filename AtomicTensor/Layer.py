@@ -1,7 +1,7 @@
 import numpy as np
 
 
-from AtomicTensorCpp.Tensor import Variable
+from AtomicTensor.Tensor import Variable
 
 
 class Layer(object):

@@ -1,4 +1,4 @@
-from AtomicTensorCpp.Layer import Layer
+from AtomicTensor.Layer import Layer
 import numpy as np
 
 class MSE(Layer):

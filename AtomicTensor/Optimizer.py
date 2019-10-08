@@ -1,4 +1,4 @@
-from AtomicTensorCpp.Layer import Layer
+from AtomicTensor.Layer import Layer
 
 
 class SGD(Layer):

@@ -4,10 +4,10 @@ import random
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
-from AtomicTensorCpp.Activition import Relu
-from AtomicTensorCpp.Layer import Layer, Sequence, Linear
-from AtomicTensorCpp.Loss import MSE
-from AtomicTensorCpp.Optimizer import SGD
+from AtomicTensor.Activition import Relu
+from AtomicTensor.Layer import Layer, Sequence, Linear
+from AtomicTensor.Loss import MSE
+from AtomicTensor.Optimizer import SGD
 
 
 class Mynet(Layer):

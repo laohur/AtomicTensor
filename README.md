@@ -4,11 +4,6 @@ A atomic, multi-backend, easy deeplearning framework
 ## 设计目标
 原子化的、多后端加速的、易于使用的深度学习框架
 
-
-算子 张量 分离
-第一期使用 numpy numba  
-第二期添加 cuda xtensor mars
-
 Tensor
 Opetator
 Layer
@@ -18,7 +13,13 @@ Optim
 Model
 
 # 记录
-1. 层连接网络
+0. 层连接网络
+1. 张量连接网络
+2. 张量模块化
 
 # 下一步
-张量连接网络，全连接
+3. 全连接，损失层、优化器
+4. RNN、CNN
+5. mars、xtesor
+6. numba cuda
+7. 保存

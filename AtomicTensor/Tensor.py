@@ -1,18 +1,21 @@
 import numpy as np
 
 
+# 传入不一定是张量
 def make_tensor_like(source, target):  # scalar (128,1)
     '''Make the operand a tensor.'''
     if isinstance(source, Tensor):
         return source
     assert isinstance(source, int) or isinstance(source, float), 'Cannot convert to tensor'
     # return Tensor().full(target.shape, source)
-    s = (1,) * len(target.data.shape)  # tumple (1,1)
-    a = np.zeros(s, dtype=np.float32)  # ndarray  (1,1)
-    b = a + source
-    c = np.zeros(s, dtype=np.float32) + source
+    # s = (1,) * len(target.data.shape)  # tumple (1,1)
+    # a = np.zeros(s, dtype=np.float32)  # ndarray  (1,1)
+    # b = a + source
+    # c = np.zeros(s, dtype=np.float32) + source
 
-    return Tensor(b)
+    d = Tensor(source)
+
+    return Tensor(d)
 
 
 # wait for mars xtensor
@@ -27,7 +30,6 @@ class Tensor(object):
         self.dtype = self.data.dtype
         self.shape = self.data.shape
         self.size = self.data.size
-        self.strides = self.data.strides
 
     # single operator
     def __neg__(self):
@@ -56,6 +58,7 @@ class Tensor(object):
         return Tensor(self.data + X.data, backend=self.backend)
 
     def __radd__(self, X):
+        X = make_tensor_like(X, self)
         return Tensor(X.data + self.data, backend=self.backend)
 
     def __sub__(self, X):
@@ -171,10 +174,11 @@ if __name__ == "__main__":
     U = Tensor().full(W.shape, 1)
     print(U)
 
-    n=np.array([1])
-    m=np.array(1)
-    a=Tensor(m)
-    b=158404
-    c=a+b
-    d=a/b
-    e=0
+    n = np.array([1])
+    m = np.array(1)
+    a = Tensor(m)
+    b = 158404
+    c = a + b
+    d = a / b
+    f = 1 + X
+    e = 0
